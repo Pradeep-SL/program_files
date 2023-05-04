@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<div class="input-container">
+  <label for="input-value">Input Value:</label>
+  <input type="number" id="input-value" />
+</div>
+<div class="input-container">
+  <label for="max-value">Max Value:</label>
+  <input type="number" id="max-value" />
+</div>
+<div class="graph-container">
+  <div class="graph-level-1">
+    <div class="graph-bar"></div>
+  </div>
+  <div class="graph-level-2">
+    <div class="graph-pie">
+      <div class="graph-pie-slice"></div>
+    </div>
+  </div>
+  <div class="graph-level-3">
+    <div class="graph-bar-gradient"></div>
+  </div>
+</div>
+
+<style type="text/css">.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.input-container label {
+  margin-right: 1rem;
+}
+
+.graph-container {
+  display: flex;
+}
+
+.graph-level-1 {
+  height: 200px;
+  width: 50px;
+  background-color: #ccc;
+  margin-right: 1rem;
+  position: relative;
+}
+
+.graph-level-1 .graph-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #008cff;
+}
+
+.graph-level-2 {
+  height: 200px;
+  width: 200px;
+  background-color: #ccc;
+  margin-right: 1rem;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.graph-level-2 .graph-pie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.graph-level-2 .graph-pie-slice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 100px, 200px, 0);
+  background-color: #008cff;
+  border-radius: 50%;
+}
+
+.graph-level-3 {
+  height: 200px;
+  width: 50px;
+  background: linear-gradient(to top, #008cff, #c2e3ff);
+  position: relative;
+}
+
+.graph-level-3 .graph-bar-gradient {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background-color: #008cff;
+  transition: height 0.5s ease;
+}
+</style>
+
+
+<script type="text/javascript">
+const inputBox = document.getElementById("input-value");
+const maxBox = document.getElementById("max-value");
+const level1Graph = document.querySelector(".graph-level-1 .graph-bar");
+const level2Graph = document.querySelector(".graph-level-2 .graph-pie-slice");
+const level3Graph = document.querySelector(".graph-level-3 .graph-bar-gradient");
+
+function updateGraphs() {
+  const inputValue = parseInt(inputBox.value);
+  const maxValue = parseInt(maxBox.value);
+  
+  if (inputValue > maxValue) {
+    alert("Input value cannot be greater than max value!");
+    return;
+  }
+  
+  const inputPercentage = (inputValue / maxValue) * 100;
+  
+  level
+
+</script>
+
+
+
+</body>
+</html>
